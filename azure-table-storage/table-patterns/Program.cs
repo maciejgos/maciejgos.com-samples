@@ -29,6 +29,9 @@ namespace AzureTableStorage.Patterns
 
             var highVolumeDeleteContext = new Context(new HighVolumeDeletePattern(tableClient: _tableClient, tableName: $"orders{DateTime.UtcNow.ToString("yyyyMMdd")}"));
             highVolumeDeleteContext.RunAsync().Wait();
+
+            var dataSeriesContext = new Context(new DataSeriesPattern(tableClient: _tableClient, tableName: "ordersStats"));
+            dataSeriesContext.RunAsync().Wait();
         }
 
         private static void Initialize()
