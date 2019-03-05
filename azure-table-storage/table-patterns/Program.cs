@@ -26,6 +26,9 @@ namespace AzureTableStorage.Patterns
 
             var logTailContext = new Context(new LogTailPattern(tableClient: _tableClient, tableName: "orders"));
             logTailContext.RunAsync().Wait();
+
+            var highVolumeDeleteContext = new Context(new HighVolumeDeletePattern(tableClient: _tableClient, tableName: $"orders{DateTime.UtcNow.ToString("yyyyMMdd")}"));
+            highVolumeDeleteContext.RunAsync().Wait();
         }
 
         private static void Initialize()
