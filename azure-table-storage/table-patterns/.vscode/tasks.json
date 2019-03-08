@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/table-patterns.csproj"
+                "${workspaceFolder}/TablePatterns.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
