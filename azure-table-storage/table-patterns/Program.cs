@@ -32,6 +32,9 @@ namespace AzureTableStorage.Patterns
 
             var dataSeriesContext = new Context(new DataSeriesPattern(tableClient: _tableClient, tableName: "ordersStats"));
             dataSeriesContext.RunAsync().Wait();
+
+            var wideEntitiesContext = new Context(new WideEntitiesPattern( tableClient: _tableClient, tableName: "wideEntities"));
+            wideEntitiesContext.RunAsync().Wait();
         }
 
         private static void Initialize()
