@@ -76,6 +76,7 @@ namespace AzureTableStorage.Patterns
                         break;
                     default:
                         Console.WriteLine("Please select value in range 0-6");
+                        break;
                 }
             }
         }
